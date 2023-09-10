@@ -28,6 +28,7 @@ app.use(function(req, res, next) {
     { method: 'GET', path: '/api/v1/clients/:id', description: 'Buscar um cliente específico' },
     { method: 'POST', path: '/api/v1/clients', description: 'Criar um novo cliente' },
     { method: 'PUT', path: '/api/v1/clients/:id', description: 'Atualizar um cliente' },
+    { method: 'DELETE', path: '/api/v1/clients/:id', description: 'Remover um cliente' }
   ]});
 });
 
