@@ -23,7 +23,7 @@ app.use('/api/v1', clientsRouter);
 
 // rota curinga para página não encontrada
 app.use(function(req, res, next) {
-  return res.status(404).send({ message: 'Route'+req.url+' Not found.', routes: [
+  return res.status(404).send({ message: 'A rota '+req.url+' Não foi encontrada. Verifique a lista de rotas disponíveis abaixo', routes: [
     { method: 'GET', path: '/api/v1/clients', description: 'Listar todos os clientes' },
     { method: 'GET', path: '/api/v1/clients/:id', description: 'Buscar um cliente específico' },
     { method: 'POST', path: '/api/v1/clients', description: 'Criar um novo cliente' },
