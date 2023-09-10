@@ -4,8 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var clientsRouter = require('./routes/clients');
 
 var app = express();
 
@@ -19,10 +18,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/api/v1', clientsRouter);
+
 
 // rota curinga para página não encontrada
 app.use(function(req, res, next) {
-  next(createError(404));
+  return res.status(404).send({ message: 'Route'+req.url+' Not found.' });
 });
 
 module.exports = app;
